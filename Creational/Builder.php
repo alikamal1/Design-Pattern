@@ -2,8 +2,6 @@
 
 namespace Creational\Builder;
 
-use function Creational\Factory_Method\clientCode as CreationalClientCode;
-
 interface SQLQueryBuilder
 {
     public function select(string $table, array $fields): SQLQueryBuilder;
