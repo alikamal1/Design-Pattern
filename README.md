@@ -1,4 +1,4 @@
-# Design Pattern
+# **Design Pattern**
 Design Pattern are typical solution to common problems in software design.  Each pattern is like a blueprint that you can customize to solve a particular design problem in your code.
 
 ## Creational Patterns
@@ -32,4 +32,4 @@ these patterns explain how to assemble objects and classes into large structures
 - Visitor
 
 ### Reference
-`https://refactoring.guru`
+https://refactoring.guru
