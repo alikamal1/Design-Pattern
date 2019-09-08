@@ -58,7 +58,7 @@ class FacebookConnector implements SocialNetworkConnector
 {
     private $login, $password;
 
-    public function __construct(sting $login, string $password)
+    public function __construct(string $login, string $password)
     {
         $this->login = $login;
         $this->password = $password;
@@ -66,17 +66,17 @@ class FacebookConnector implements SocialNetworkConnector
 
     public function logIn(): void
     {
-        echo "Send HTTP API request to login in user $this->login with password $this->password \n";
+        echo "Send HTTP API request to login in user $this->login with password $this->password <br>";
     }
 
     public function logOut(): void
     {
-        echo "Send HTTP API request to logout user in user $this->login \n";
+        echo "Send HTTP API request to logout user in user $this->login <br><br>";
     }
 
     public function createPost($content): void
     {
-        echo "Send HTTP API request to create post in Facebook \n";
+        echo "Send HTTP API request to create post in Facebook <br>";
     }
 }
 
@@ -84,7 +84,7 @@ class TwitterConnector implements SocialNetworkConnector
 {
     private $login, $password;
 
-    public function __construct(sting $login, string $password)
+    public function __construct(string $login, string $password)
     {
         $this->login = $login;
         $this->password = $password;
@@ -92,17 +92,17 @@ class TwitterConnector implements SocialNetworkConnector
 
     public function logIn(): void
     {
-        echo "Send HTTP API request to login in user $this->login with password $this->password \n";
+        echo "Send HTTP API request to login in user $this->login with password $this->password <br>";
     }
 
     public function logOut(): void
     {
-        echo "Send HTTP API request to logout user in user $this->login \n";
+        echo "Send HTTP API request to logout user in user $this->login <br><br>";
     }
     
     public function createPost($content): void
     {
-        echo "Send HTTP API request to create post in Twitter \n";
+        echo "Send HTTP API request to create post in Twitter <br>";
     }
 }
 
@@ -112,12 +112,12 @@ function clientCode(SocialNetworkPoster $creator)
     $creator->post("a New Post");
 }
 
-echo "Testing CncreteCreateor 1:\n";
+echo "Testing CncreteCreateor 1:<br>";
 clientCode(new FacebookPoster("Ali Kamal", "******"));
-echo "\n\n";
+echo "<br><br>";
 
-echo "Testing CncreteCreateor 2:\n";
+echo "Testing CncreteCreateor 2:<br>";
 clientCode(new TwitterPoster("Ali Kamal", "******"));
-echo "\n\n";
+echo "<br><br>";
 
 ?>
