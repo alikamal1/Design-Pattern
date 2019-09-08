@@ -1,8 +1,6 @@
 # Design Pattern
 Design Pattern are typical solution to common problems in software design.  Each pattern is like a blueprint that you can customize to solve a particular design problem in your code.
 
-# Catalog of Patterns
-
 ## Creational Patterns
 these patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 - Factory Method
@@ -32,3 +30,6 @@ these patterns explain how to assemble objects and classes into large structures
 - Strategy
 - Template Method
 - Visitor
+
+### Reference
+`https://refactoring.guru`
