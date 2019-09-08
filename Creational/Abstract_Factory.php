@@ -86,12 +86,15 @@ class TwigPageTemplate extends BasePageTemplate
     public function getTemplateString(): string
     {
         $renderTitle = $this->titleTemplate->getTemplateString();
+        return "";
+        /*
         return <<<HTML
             <div class="page"> 
                 $renderTitle 
                 <article class="content">{{ content }}</article> 
             </div>
         HTML;
+        */
     }
 }
 
@@ -100,12 +103,15 @@ class PHPTemplatePageTemplate extends BasePageTemplate
     public function getTemplateString(): string
     {
         $renderTitle = $this->titleTemplate->getTemplateString();
+        return "";
+        /*
         return <<<HTML
             <div class="page"> 
                 $renderTitle 
                 <article class="content"><?= \$content; ?></article> 
             </div>
         HTML;
+        */
     }
 }
 
