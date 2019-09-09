@@ -3,7 +3,7 @@ these patterns explain how to assemble objects and classes into large structures
 
 ### Adapter 
 
-### 
+### Bridge
 
 ### 
 
