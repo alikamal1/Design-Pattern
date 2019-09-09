@@ -6,3 +6,7 @@ these patterns provide various object creation mechanisms, which increase flexib
 ### Abstract Factory
 
 ### Builder
+
+### Prototype
+
+### Signleton
