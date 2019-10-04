@@ -2,20 +2,21 @@
 
 namespace Creational\Singleton;
 
+/**
+ * Singleton Design Pattern
+ * let you ensure that a class has only one instance while providing a glable access point to this instance
+ */
+
 class Singleton
 {
     private static $instances = [];
 
     protected function __construct() { }
-
     protected function __clone() { }
-
-    public function __wakeup()
-    {
-        throw new \Exception("Cannot unserialize Singleton");
+    protected function __wakeup() { 
+        throw new \Exception("Can not unserialize signleton");
     }
-
-    public static function getInstance()
+    public function getInstance()
     {
         $subclass = static::class;
         if(!isset(self::$instances[$subclass])) {
@@ -31,13 +32,7 @@ class Logger extends Singleton
 
     protected function __construct()
     {
-        $this->fileHandle = fopen('php://stdout', 'w');
-    }
-
-    public function writeLog(string $message): void
-    {
-        $date = date('Y-m-d');
-        fwrite($this->fileHandle, "$date: $message\n");
+        $this->fileHandle = fopen("php://stduout", "w");
     }
 
     public static function log(string $message): void
@@ -45,44 +40,23 @@ class Logger extends Singleton
         $logger = static::getInstance();
         $logger->writeLog($message);
     }
-}
 
-class Config extends Singleton
-{
-    private $hashmap = [];
-
-    public function getValue(string $key): string
+    public function writeLog(string $message): void
     {
-        return $this->hashmap[$key];
-    }
-
-    public function setValue(string $key, string $value): void
-    {
-        $this->hashmap[$key] = $value;
+        $date = date("Y-m-d");
+        fwrite($this->fileHandle, "$date : message");
     }
 }
 
-Logger::log("Started!");
+Logger::log("Started");
 
 $l1 = Logger::getInstance();
 $l2 = Logger::getInstance();
 
 if($l1 === $l2) {
-    Logger::log("Logger has a single instance.");
+    Logger::log("Logger has a signle instance");
 } else {
-    Logger::log("Loggers are different.");
+    Logger::log("Logger are different");
 }
 
-$config1 = Config::getInstance();
-$login = "test_login";
-$password = "test_password";
-$config1->setValue("login", $login);
-$config1->setValue("passowrd", $password);
-
-$config2 = Config::getInstance();
-
-if($login == $config2->getValue("login") && $password == $config2->getValue("password")) {
-    Logger::Log("Config Singleton also works fine.");
-}
-
-Logger::log("Finished!");
+Logger::log("Finished");
