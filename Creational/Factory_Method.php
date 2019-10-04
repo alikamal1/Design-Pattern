@@ -2,56 +2,22 @@
 
 namespace Creational\Factory_Method;
 
-abstract class SocialNetworkPoster
-{
-    abstract public function getSocialNetwork(): SocialNetworkConnector;
-
-    public function post($content): void
-    {
-        $network = $this->getSocialNetwork();
-        $network->login();
-        $network->createPost($content);
-        $network->logout();
-    }
-}
-
-class FacebookPoster extends SocialNetworkPoster
-{
-    private $login, $password;
-
-    public function __construct(string $login, string $password)
-    {
-        $this->login = $login;
-        $this->password = $password;
-    }
-
-    public function getSocialNetwork(): SocialNetworkConnector
-    {
-        return new FacebookConnector($this->login, $this->password);
-    }
-}
-
-class TwitterPoster extends SocialNetworkPoster
-{
-    private $login, $password;
-
-    public function __construct(string $login, string $password)
-    {
-        $this->login = $login;
-        $this->password = $password;
-    }
-
-    public function getSocialNetwork(): SocialNetworkConnector
-    {
-        return new TwitterConnector($this->login, $this->password);
-    }
-}
+/**
+ * Factory Method Design Pattern
+ * provide an interface for creating objects in superclass but allow subclass to alter the type of objects that will be created
+ * 
+ * before $p = new FacebookConnector;
+ * after  $p = $this->getSocialNetwork();
+ * 
+ * this allows changing the type of the product being created by socialNetworkPoster subclasses
+ * 
+ */
 
 interface SocialNetworkConnector
 {
     public function logIn(): void;
-    public function logOut(): void;
     public function createPost($content): void;
+    public function logOut(): void;
 }
 
 class FacebookConnector implements SocialNetworkConnector
@@ -66,58 +32,101 @@ class FacebookConnector implements SocialNetworkConnector
 
     public function logIn(): void
     {
-        echo "Send HTTP API request to login in user $this->login with password $this->password <br>";
-    }
-
-    public function logOut(): void
-    {
-        echo "Send HTTP API request to logout user in user $this->login <br><br>";
+        echo "Send HTTP API request to log in user $this->login with passowrd $this->password";
     }
 
     public function createPost($content): void
     {
-        echo "Send HTTP API request to create post in Facebook <br>";
+        echo "Send HTTP API request to create  a post in Facebook timeline";
+    }
+
+    public function logout(): void
+    {
+        echo "Send HTTP API request to log out user $this->login";
     }
 }
 
 class TwitterConnector implements SocialNetworkConnector
 {
-    private $login, $password;
+    private $email, $password;
 
-    public function __construct(string $login, string $password)
+    public function __construct(string $email, string $password)
     {
-        $this->login = $login;
+        $this->email = $email;
         $this->password = $password;
     }
 
     public function logIn(): void
     {
-        echo "Send HTTP API request to login in user $this->login with password $this->password <br>";
+        echo "Send HTTP API request to log in user $this->email with passowrd $this->password";
     }
 
-    public function logOut(): void
-    {
-        echo "Send HTTP API request to logout user in user $this->login <br><br>";
-    }
-    
     public function createPost($content): void
     {
-        echo "Send HTTP API request to create post in Twitter <br>";
+        echo "Send HTTP API request to create  a post in Facebook timeline";
+    }
+
+    public function logout(): void
+    {
+        echo "Send HTTP API request to log out user $this->email";
+    }
+}
+
+abstract class SocialNetworkPoster
+{
+    abstract public function getSocialNetwork(): SocialNetworkConnector;
+
+    public function post($content): void
+    {
+        $network = $this->getSocialNetwork();
+        $network->logIn();
+        $network->createPost($content);
+        $network->logout();
+    }
+}
+
+class FacebookPoster extends SocialNetworkPoster
+{
+    private $login, $password;
+
+    public function __construct(string $login, string $password) {
+        $this->login = $login;
+        $this->password = $password;
+    }
+
+    public function getSocialNetwork(): SocialNetworkConnector
+    {
+        return new FacebookConnector($this->login, $this->password);
+    }
+}
+
+class TwitterPoster extends SocialNetworkPoster
+{
+    private $email, $password;
+
+    public function __construct(string $email, string $password) {
+        $this->email = $email;
+        $this->password = $password;
+    }
+
+    public function getSocialNetwork(): SocialNetworkConnector
+    {
+        return new TwitterConnector($this->email, $this->password);
     }
 }
 
 function clientCode(SocialNetworkPoster $creator)
 {
-    $creator->post("Hello World!");
-    $creator->post("a New Post");
+    $creator->post("Hello World");
+    $creator->post("Hello World 2");
 }
 
-echo "Testing CncreteCreateor 1:<br>";
-clientCode(new FacebookPoster("Ali Kamal", "******"));
-echo "<br><br>";
 
-echo "Testing CncreteCreateor 2:<br>";
-clientCode(new TwitterPoster("Ali Kamal", "******"));
-echo "<br><br>";
+echo "Testing Concrete Creator 1";
+clientCode(new FacebookPoster("Ali Kamal", "*******"));
+
+echo "Testing Concrete Creator 2";
+clientCode(new TwitterPoster("AliKamal@email.com", "*******"));
+
 
 ?>
