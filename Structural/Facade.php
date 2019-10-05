@@ -1,6 +1,6 @@
 <?php
 
-namespace Structural\Bridge;
+namespace Structural\Facade;
 
 /**
  * Facade Design Pattern
