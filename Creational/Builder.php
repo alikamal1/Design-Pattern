@@ -86,3 +86,11 @@ clientCode(new MysqlQueryBuilder);
 
 echo "Testing MYSQL query builder:";
 clientCode(new PostgresQueryBuilder);
+
+/*
+Testing MySQL query builder:
+SELECT name, email, password FROM users WHERE age > '18' AND age < '30' LIMIT 10, 20;
+
+Testing PostgresSQL query builder:
+SELECT name, email, password FROM users WHERE age > '18' AND age < '30' LIMIT 10 OFFSET 20;
+*/

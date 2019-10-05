@@ -81,3 +81,13 @@ function clientCode(Notification $notification)
  $slackApi = new SlackApi("example.com", "xxxxxxx");
  $notification = new SlackNotification($slackApi, "Example.com Developers");
  clientCode($notification);
+
+ /*
+Client code is designed correctly and works with email notifications:
+Sent email with title 'Website is down!' to 'developers@example.com' that says '<strong style='color:red;font-size: 50px;'>Alert!</strong> Our website is not responding. Call admins and bring it up!'.
+
+The same client code can work with other classes via adapter:
+Logged in to a slack account 'example.com'.
+Posted following message into the 'Example.com Developers' chat: '#Website is down!# Alert! Our website is not responding. Call admins and bring it up!'.
+
+ */

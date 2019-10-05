@@ -174,3 +174,11 @@ echo $page->render(new PHPTemplateFactory);
 echo "Testing actual rendering with the Twig factory:<br>";
 echo $page->render(new TwigTemplateFactory);
 
+/*
+Testing actual rendering with the PHPTemplate factory:
+<div class="page">
+    <h1>Sample page</h1>
+    <article class="content">This it the body.</article>
+</div>
+*/
+

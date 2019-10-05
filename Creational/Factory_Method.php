@@ -128,5 +128,21 @@ clientCode(new FacebookPoster("Ali Kamal", "*******"));
 echo "Testing Concrete Creator 2";
 clientCode(new TwitterPoster("AliKamal@email.com", "*******"));
 
+/*
+Testing ConcreteCreator1:
+Send HTTP API request to log in user john_smith with password ******
+Send HTTP API requests to create a post in Facebook timeline.
+Send HTTP API request to log out user john_smith
+Send HTTP API request to log in user john_smith with password ******
+Send HTTP API requests to create a post in Facebook timeline.
+Send HTTP API request to log out user john_smith
 
-?>
+
+Testing ConcreteCreator2:
+Send HTTP API request to log in user john_smith@example.com with password ******
+Send HTTP API requests to create a post in LinkedIn timeline.
+Send HTTP API request to log out user john_smith@example.com
+Send HTTP API request to log in user john_smith@example.com with password ******
+Send HTTP API requests to create a post in LinkedIn timeline.
+Send HTTP API request to log out user john_smith@example.com
+*/

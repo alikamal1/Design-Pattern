@@ -60,3 +60,9 @@ if($l1 === $l2) {
 }
 
 Logger::log("Finished");
+
+/*
+2018-06-04: Started!
+2018-06-04: Logger has a single instance.
+2018-06-04: Finished!
+*/
