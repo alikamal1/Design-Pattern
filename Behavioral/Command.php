@@ -36,14 +36,12 @@ abstract class WebScrapingCommand implements Command
     {
         return $this->url;
     }
-
     public function execute(): void
     {
         $html = $this->download();
         $this->parse($html);
         $this->complete();
     }
-
     public function download(): string
     {
         $html = file_get_contents($this->getURL());
@@ -66,7 +64,6 @@ class IMDBGenresScrapingCommand extends WebScrapingCommand
     {
         $this->url = "http://www.imdb.com/feature/genre";
     }
-
     public function parse(string $html): void
     {
         preg_match_all("|href=\"(https://www.imdb.com/search/title\?genres=.*?)\"|", $html, $matches);
@@ -86,22 +83,18 @@ class IMDBGenrePageScrapingCommand extends WebScrapingCommand
         parent::__construct($url);
         $this->page = $page;
     }
-
     public function getURL(): string
     {
         return $this->url . "?page=" . $this->page;
     }
-
     public function parse(string $html): void
     {
         preg_match_all("|href=\"(/title/.*?/)\?ref_=adv_li_tt\"|", $html, $matches);
         echo "IMDBGenrePageScrapingCommand: Discovered " . count($matches[1]) . " movies.\n";
-
         foreach($matches[1] as $moviePath) {
             $url = "http://www.imdb.com" . $moviePath;
             Queue::get()->add(new IMDBMovieScrapingCommand($url));
         }
-
         if(preg_match_all("|Next &#187;</a>|", $html)) {
             Queue::get()->add(new IMDBGenrePageScrapingCommand($this->url, $this->page + 1));
         }
