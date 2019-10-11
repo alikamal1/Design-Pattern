@@ -84,7 +84,7 @@ take care of effective communication and the assignment of reponsibilities betwe
 
 [**Command**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Command.php) turns a request inot a stand-alone object that contains all information about the request. this transformaion lets you parameterize methods with different request, delay or queue a request's excution and support undoable operations 
 
-**Iterator** lets you traverse elements of a collection without exposing its underlying representataion (list, stack, tree, etc.)
+[**Iterator**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Iterator.php) lets you traverse elements of a collection without exposing its underlying representataion (list, stack, tree, etc.)
 
 **Mediator** lets you reduce chaotic dependencies between objects. the parttern restricts direct communications between the objects and forces them to collaborate only via a mediator object
 
