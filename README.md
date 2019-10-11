@@ -50,39 +50,39 @@ Design Pattern are typical solution to common problems in software design.  Each
 ## Creational Patterns
 provide object creation mechanisms that increase flexibility and reuse of existing code
 
-[**Factory Method**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Factory_Method.php){:target="_blank"} provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created
+[**Factory Method**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Factory_Method.php) provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created
 
 **Abstract Factory** lets you produce families of related objects without specifying their concrete classes
 
-[**Builder**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Builder.php){:target="_blank"} lets you construct complex objects step by step. the pattern allows you produce different types and representations of an object using the same construction code
+[**Builder**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Builder.php) lets you construct complex objects step by step. the pattern allows you produce different types and representations of an object using the same construction code
 
-[**Prototype**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Prototype.php){:target="_blank"} lets you copy existing objects without making your code dependent on their classes
+[**Prototype**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Prototype.php) lets you copy existing objects without making your code dependent on their classes
 
-[**Signleton**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Singleton.php){:target="_blank"} lets you ensure that a class has only one instance, while providing a gloabl access point to this instance
+[**Signleton**](https://github.com/alikamal1/Design-Pattern/blob/master/Creational/Singleton.php) lets you ensure that a class has only one instance, while providing a gloabl access point to this instance
 
 ## Structural Patterns
 explain how to assemble objects and classes into larger structures, while keeping the structures flexible and efficient
 
-[**Adapter**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Adapter.php){:target="_blank"} allows objects with incompatible interfaces to collaborate
+[**Adapter**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Adapter.php) allows objects with incompatible interfaces to collaborate
 
-[**Bridge**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Bridge.php){:target="_blank"} lets you split a large class or a set of closely related classes into two separate hierarchies-abstraction and implementaion which can be developed independently of each other
+[**Bridge**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Bridge.php) lets you split a large class or a set of closely related classes into two separate hierarchies-abstraction and implementaion which can be developed independently of each other
 
 **Composite** lets you compose objects into tree structure and then work with these structures as if they were indicidual objects
 
 **Decorator** let you attach new behaviors to objects by placing these obejcts inside a special wrapper objects that contain the behaviors
 
-[**Facade**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Facade.php){:target="_blank"} provide a simplified interface to a library, a framework or any other complex set of classes
+[**Facade**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Facade.php) provide a simplified interface to a library, a framework or any other complex set of classes
 
 **Flyweight** let you fit more objects into the avaible amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object
 
-[**Proxy**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Proxy.php){:target="_blank"} let you provide a substitute or placehoder for another object. A proxy control access to original object allowing you to preform something either before or after the request gets throught to the original object
+[**Proxy**](https://github.com/alikamal1/Design-Pattern/blob/master/Structural/Proxy.php) let you provide a substitute or placehoder for another object. A proxy control access to original object allowing you to preform something either before or after the request gets throught to the original object
 
 ## Behavioral Patterns
 take care of effective communication and the assignment of reponsibilities between objects
 
 **Chain of Responsibility** lets you pass requests along a chain of handlers. upon receiving a request each handler decides either to process the request or to pass it to the next handler in the chain
 
-[**Command**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Command.php){:target="_blank"} turns a request inot a stand-alone object that contains all information about the request. this transformaion lets you parameterize methods with different request, delay or queue a request's excution and support undoable operations 
+[**Command**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Command.php) turns a request inot a stand-alone object that contains all information about the request. this transformaion lets you parameterize methods with different request, delay or queue a request's excution and support undoable operations 
 
 **Iterator** lets you traverse elements of a collection without exposing its underlying representataion (list, stack, tree, etc.)
 
@@ -90,11 +90,11 @@ take care of effective communication and the assignment of reponsibilities betwe
 
 **Memento** lets you save and restore the previous state of an object without revealing the details of its implementation
 
-[**Observer**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Observer.php){:target="_blank"} lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they're observing
+[**Observer**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Observer.php) lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they're observing
 
 **State** lets an object alter its behavior when its internal state changes. it appears as the object changed ints class
 
-[**Strategy**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Strategy.php){:target="_blank"} lets you define a family of algorithms put each of them into a separate class and make their objects interchangeable
+[**Strategy**](https://github.com/alikamal1/Design-Pattern/blob/master/Behavioral/Strategy.php) lets you define a family of algorithms put each of them into a separate class and make their objects interchangeable
 
 **Template method** defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure
 
